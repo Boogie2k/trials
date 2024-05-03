@@ -29,7 +29,7 @@ import { useUserStore } from '../store/store';
 const TAB_HEIGHT = 72;
 const CONTENT_HEIGHT = 240;
 
-const Login= () => {
+const Login= ({navigation}:any) => {
   const [loggedIn, setloggedIn] = useState(false);
 const [userInfo, setuserInfo] = useState([]);
 
@@ -179,8 +179,12 @@ const scrollOffset = useState(new Animated.Value(0))[0];
         })}
       </Animated.ScrollView>
 
-      <Button onPress={signOut} title='signout'/></View>}
-
+      <Button onPress={signOut} title='signout'/>
+      
+    
+      
+      </View>}
+  <Button onPress={()=>{navigation.navigate("SwipeUp")}} title='move'/>
       
       </SafeAreaView>
   );
